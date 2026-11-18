@@ -1,4 +1,4 @@
-# valkey
+# valkey4j
 
 Key names and counters in Valkey for any module. Every key is `<service>:<kind>:<id>`: the service
 is the app's, and its Valkey ACL user reaches only keys `<service>:*`; the kind and the id are the
