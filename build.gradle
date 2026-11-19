@@ -7,13 +7,13 @@ plugins {
 
 dependencies {
     api platform(libs.spring.boot.bom)
-    runtimeOnly libs.config4j // loads the files in META-INF/spring/…LibraryDefaults.imports
-    api libs.error4j
+    runtimeOnly libs.config // loads the files in META-INF/spring/…LibraryDefaults.imports
+    api libs.error
     implementation libs.starter.data.redis // consumers use ValkeyKeys, never Redis itself
     implementation libs.spring.boot.autoconfigure
     implementation libs.starter.validation // the properties are checked at startup
 
-    testImplementation testFixtures(libs.error4j)
+    testImplementation testFixtures(libs.error)
 
     integrationTestImplementation libs.testcontainers.core
     integrationTestImplementation libs.testcontainers.junit

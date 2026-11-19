@@ -1,4 +1,4 @@
-package uz.khakimjanovich.valkey4j;
+package io.github.org4j.valkey;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

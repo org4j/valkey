@@ -1,4 +1,4 @@
-package uz.khakimjanovich.valkey4j;
+package io.github.org4j.valkey;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -18,7 +18,7 @@ class ValkeyPropertiesIT {
   @Test
   void theServiceStarts() {
     runner
-        .withPropertyValues("valkey4j.service=customer-gw")
+        .withPropertyValues("org4j.valkey.service=customer-gw")
         .run(context -> assertThat(context).hasSingleBean(ValkeyKeys.class));
   }
 
@@ -29,14 +29,14 @@ class ValkeyPropertiesIT {
             assertThat(context)
                 .getFailure()
                 .rootCause()
-                .hasMessageContaining("valkey4j")
+                .hasMessageContaining("org4j.valkey")
                 .hasMessageContaining("service"));
   }
 
   @Test
   void aServiceWithAColonStopsStartup() {
     runner
-        .withPropertyValues("valkey4j.service=customer:gw")
+        .withPropertyValues("org4j.valkey.service=customer:gw")
         .run(
             context ->
                 assertThat(context).getFailure().rootCause().hasMessageContaining("service"));
