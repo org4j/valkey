@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.valkey;
+package uz.khakimjanovich.valkey4j;
 
 import java.time.Duration;
 import java.util.List;
@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.Nullable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import uz.khakimjanovich.platform.error.GeneralException;
+import uz.khakimjanovich.error4j.GeneralException;
 
 @Slf4j
 public class ValkeyLocks {

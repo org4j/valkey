@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.valkey;
+package uz.khakimjanovich.valkey4j;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -17,7 +17,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-import uz.khakimjanovich.platform.error.GeneralException;
+import uz.khakimjanovich.error4j.GeneralException;
 
 @Testcontainers
 class ValkeyKeysIT {
@@ -76,7 +76,7 @@ class ValkeyKeysIT {
             "spring.data.redis.port=" + VALKEY.getMappedPort(6379),
             "spring.data.redis.username=customer-gw",
             "spring.data.redis.password=valkey-it",
-            "platform.valkey.service=" + service);
+            "valkey4j.service=" + service);
   }
 
   @BeforeEach
@@ -181,7 +181,7 @@ class ValkeyKeysIT {
             "spring.data.redis.port=1",
             "spring.data.redis.timeout=1s",
             "spring.data.redis.connect-timeout=1s",
-            "platform.valkey.service=customer-gw")
+            "valkey4j.service=customer-gw")
         .run(
             context ->
                 assertThatThrownBy(() -> context.getBean(ValkeyKeys.class).count("sends", "n1"))

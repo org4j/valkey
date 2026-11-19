@@ -1,6 +1,6 @@
-package uz.khakimjanovich.platform.valkey;
+package uz.khakimjanovich.valkey4j;
 
-import uz.khakimjanovich.platform.error.StatusThrowable;
+import uz.khakimjanovich.error4j.StatusThrowable;
 
 public enum ValkeyExceptionStatus implements StatusThrowable {
   VALKEY_UNAVAILABLE,

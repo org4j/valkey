@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.valkey;
+package uz.khakimjanovich.valkey4j;
 
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -12,7 +12,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.ExpirationOptions;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import uz.khakimjanovich.platform.error.GeneralException;
+import uz.khakimjanovich.error4j.GeneralException;
 
 @Slf4j
 public class ValkeyKeys {

@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.valkey;
+package uz.khakimjanovich.valkey4j;
 
 import java.util.regex.Pattern;
 import lombok.experimental.UtilityClass;
@@ -6,7 +6,7 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class ValkeyConstants {
 
-  public static final String PROPERTIES_PREFIX = "platform.valkey";
+  public static final String PROPERTIES_PREFIX = "valkey4j";
 
   public static final String KEY_FORMAT = "%s:%s:%s";
 

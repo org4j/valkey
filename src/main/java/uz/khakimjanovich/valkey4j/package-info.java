@@ -1,4 +1,4 @@
 @NullMarked
-package uz.khakimjanovich.platform.valkey;
+package uz.khakimjanovich.valkey4j;
 
 import org.jspecify.annotations.NullMarked;

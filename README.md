@@ -5,7 +5,7 @@ is the app's, and its Valkey ACL user reaches only keys `<service>:*`; the kind 
 module's. A counter lives for its window from its first count, then starts again from zero.
 
 ```groovy
-implementation libs.platform.valkey // needs Valkey (spring.data.redis.*)
+implementation libs.valkey4j // needs Valkey (spring.data.redis.*)
 ```
 
 ```yaml
@@ -16,9 +16,8 @@ spring:
       port: ${VALKEY_PORT}
       username: ${VALKEY_USERNAME} # the ACL user: keys <service>:* only
       password: ${VALKEY_PASSWORD}
-platform:
-  valkey:
-    service: ${VALKEY_SERVICE} # first part of every key, the ACL user's prefix
+valkey4j:
+  service: ${VALKEY_SERVICE} # first part of every key, the ACL user's prefix
 ```
 
 ```java
@@ -65,7 +64,7 @@ None has a default: a missing or unworkable value stops startup, naming the prop
 
 | Property | What |
 |---|---|
-| `platform.valkey.service` | first part of every key, lower case words joined by `-`; the ACL user's prefix |
+| `valkey4j.service` | first part of every key, lower case words joined by `-`; the ACL user's prefix |
 
 Where Valkey is and how to sign in are Spring Boot's `spring.data.redis.*`.
 

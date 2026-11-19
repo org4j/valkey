@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.valkey;
+package uz.khakimjanovich.valkey4j;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
