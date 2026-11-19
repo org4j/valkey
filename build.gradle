@@ -1,8 +1,8 @@
 // Valkey keys for any module: names <service>:<kind>:<id> inside the app's ACL prefix, and counters
 // and limits that expire with their window.
 plugins {
-    alias(libs.plugins.platform.library)
-    alias(libs.plugins.platform.integration.test)
+    alias(libs.plugins.conventions.library)
+    alias(libs.plugins.conventions.integration.test)
 }
 
 dependencies {
