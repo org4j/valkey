@@ -1,11 +1,11 @@
-# valkey4j
+# valkey
 
 Key names and counters in Valkey for any module. Every key is `<service>:<kind>:<id>`: the service
 is the app's, and its Valkey ACL user reaches only keys `<service>:*`; the kind and the id are the
 module's. A counter lives for its window from its first count, then starts again from zero.
 
 ```groovy
-implementation libs.valkey4j // needs Valkey (spring.data.redis.*)
+implementation libs.valkey // needs Valkey (spring.data.redis.*)
 ```
 
 ```yaml
@@ -16,8 +16,9 @@ spring:
       port: ${VALKEY_PORT}
       username: ${VALKEY_USERNAME} # the ACL user: keys <service>:* only
       password: ${VALKEY_PASSWORD}
-valkey4j:
-  service: ${VALKEY_SERVICE} # first part of every key, the ACL user's prefix
+org4j:
+  valkey:
+    service: ${VALKEY_SERVICE} # first part of every key, the ACL user's prefix
 ```
 
 ```java
@@ -64,7 +65,7 @@ None has a default: a missing or unworkable value stops startup, naming the prop
 
 | Property | What |
 |---|---|
-| `valkey4j.service` | first part of every key, lower case words joined by `-`; the ACL user's prefix |
+| `org4j.valkey.service` | first part of every key, lower case words joined by `-`; the ACL user's prefix |
 
 Where Valkey is and how to sign in are Spring Boot's `spring.data.redis.*`.
 
@@ -74,8 +75,8 @@ Where Valkey is and how to sign in are Spring Boot's `spring.data.redis.*`.
 
 ## Tests
 
-- `./gradlew -p platform :valkey:test`: key names, refused kinds, ids, windows and limits, every
+- `./gradlew test`: key names, refused kinds, ids, windows and limits, every
   error defined in every language.
-- `./gradlew -p platform :valkey:integrationTest`: a missing or unworkable service that stops
+- `./gradlew integrationTest`: a missing or unworkable service that stops
   startup; a real Valkey with an ACL user like heeyid-infra's: counts under the prefix, the window from the first count, a lost expiry healed,
   a limit with its Retry-After and a reset, another prefix refused, and Valkey down.

@@ -1,15 +1,15 @@
-package uz.khakimjanovich.valkey4j;
+package io.github.org4j.valkey;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.mock;
 
+import io.github.org4j.error.ErrorDefinitions;
+import io.github.org4j.error.GeneralException;
 import java.time.Duration;
 import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import uz.khakimjanovich.error4j.ErrorDefinitions;
-import uz.khakimjanovich.error4j.GeneralException;
 
 class ValkeyKeysTest {
 
@@ -45,6 +45,6 @@ class ValkeyKeysTest {
   @Test
   void everyErrorIsDefinedInEveryLanguage() {
     ErrorDefinitions.assertComplete(
-        "uz.khakimjanovich.valkey4j", "classpath*:properties/valkey-exception.yaml");
+        "io.github.org4j.valkey", "classpath*:properties/valkey-exception.yaml");
   }
 }
